@@ -1,0 +1,17 @@
+version: '3'
+services:
+
+  #Nginx Service
+  webserver:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./public:/usr/share/nginx/html
+
+  #MySQL Service
+  db:
+    image: stain/jena-fuseki
+    ports:
+      - "3030:3030"
